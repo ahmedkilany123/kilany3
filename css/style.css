@@ -3,6 +3,8 @@
     --main-color: #2196f3;
     --main-color-alt: #1787e0;
     --main-transition:0.4s;
+    --main-padding-top:100px;
+    --main-padding-bottom:100px;
 }
 * {
     box-sizing: border-box;
@@ -52,7 +54,7 @@ ul {
     font-weight: bold;
     position: relative;
     border: 2px solid black;
-    margin: 100px auto;
+    margin: 0 auto 80px;
     padding: 10px 20px;
     width: fit-content;
     z-index: 1;
@@ -94,9 +96,11 @@ ul {
     -webkit-animation: right-move 0.5s linear forwards;
 }
 .main-title:hover {
+    cursor: pointer;
     color: white;
     border: 2px solid white;
     transition-delay: 0.5s;
+    
 }
 /* end global rules  */
 
@@ -253,12 +257,7 @@ ul {
         border-bottom: 1px solid #e9e6e6;
     }
 }
-.header .mega-menu .links li::before {
-    content: "";
-}
-.header .mega-menu .links li:hover::before {
 
-}
 .header .mega-menu .links li a {
     display: block;
     color: var(--main-color);
@@ -367,6 +366,72 @@ ul {
     -webkit-animation: bouncing 1.5s infinite;
 }
 /* end landing */
+
+
+/* stat Articls */
+.article {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+.article .container {
+display: grid;
+grid-template-columns: repeat(auto-fill ,minmax(250px,1fr) );
+gap: 40px;
+}
+.article .box {
+border-radius: 6px;
+overflow: hidden;
+box-shadow: 0 2px 15px rgb(0 0 0  / 10%);
+background-color: white;
+transition: transform var(--main-transition) , box-shadow var(--main-transition);
+}
+.article .box:hover {
+    box-shadow: 0 2px 15px rgb(0 0 0  / 20%);
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+.article  .box img {
+max-width: 100%;
+width: 100%;
+}
+.article  .box .content {
+padding: 20px;
+}
+.article  .box .content h3 {
+font-weight: bold;
+margin: 0;
+}
+.article  .box .content p {
+margin: 10 0 0;
+color: #777;
+line-height: 1.5;
+}
+.article  .box .info {
+padding: 20px ;
+border-top: 1px solid #e6e6e7;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.article  .box .info a {
+color: var(--main-color);
+}
+.article  .box .info i {
+color: var(--main-color);
+}
+.article .box:hover .info i {
+    animation: move-right var(--main-transition) linear infinite;
+    -webkit-animation: move-right var(--main-transition) linear infinite;
+}
+
+
+
+/* end Articls */
+
 /* start animation  */
 @keyframes upDown {
     0% ,
@@ -431,6 +496,15 @@ ul {
         -moz-border-radius: 0;
         -ms-border-radius: 0;
         -o-border-radius: 0;
+}
+}
+@keyframes move-right {
+    100% {
+        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        -o-transform: translateX(10px);
 }
 }
 /* end animation  */
