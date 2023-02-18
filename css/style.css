@@ -495,6 +495,7 @@ gap: 40px;
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
     position: relative;
+    background-color: white;
 }
 .features .container {
     display: grid;
@@ -505,6 +506,45 @@ gap: 40px;
     border: 1px solid #ccc;
     text-align: center;
 }
+.features .box .img-holder {
+    position: relative;
+    overflow: hidden;
+}
+.features .box .img-holder::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 100%;
+    height: 100%;
+}
+.features .quality .img-holder::before {
+    background-color: #ff000057;
+}
+.features .time .img-holder::before {
+    background-color: #00800057;
+}
+.features .passion .img-holder::before {
+    background-color: #0000ff57;
+}
+.features .box .img-holder::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0px 0px 175px 500px;
+    border-color: transparent transparent white transparent;
+}
+.features .box:hover .img-holder::after {
+    border-width: 175px 500px 175px 0;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+
 .features .box img {
     max-width: 100%;
 }
@@ -526,17 +566,131 @@ gap: 40px;
     position: absolute;
     height: 5px;
     width: calc(100% - 30px);
-    background-color: red;
     bottom: -20px;
     left: 15px;
 }
+.features .quality h2::after {
+    background-color: red;
+}
+.features .time h2::after {
+    background-color: green;
+}
+.features .passion h2::after {
+    background-color: blue;
+}
 .features .box a {
-    border: 3px solid red;
+    border: 3px solid ;
+    font-size: 24px;
+    font-weight: bold;
     padding: 10px 30px;
     margin: 10px auto 30px;
     display: block;
     width: fit-content;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
+.features .time a {
+    color: #009688;
+    border-color: #009688;
+    background: linear-gradient(to right, #009688 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.features .quality a {
+    color: red;
+    border-color: red;
+    background: linear-gradient(to right, red 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.features .passion a {
+    color: blue;
+    border-color: blue;
+    background: linear-gradient(to right, blue 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.features .box:hover a {
+    color: white;
+    background-position: left top;
+}
+.features .quality a { 
+    border: 3px solid red;
+}
+.features .time a {
+    border: 3px solid green;
+}
+.features .passion a {
+    border: 3px solid blue;
+}
+
+/* start testimonials  */
+
+.testimonials {
+    position: relative;
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: #eee;
+}
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 55px 30px;
+}
+.testimonials .box {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+}
+.testimonials .box:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+.testimonials .box img {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    right: -10px;
+    top: -50px;
+    border:  10px #eee solid;
+}
+.testimonials .box:hover img {
+    filter: blur(50);
+    filter: grayscale(80%);
+}
+.testimonials .box h3 {
+    margin: 0 0 10px;
+}
+.testimonials .box .title {
+    display: block; /* to recpect margin*/
+    color: #777;
+    margin-bottom: 10px;
+}
+.testimonials .rate .yellow {
+    color: #ffc107;
+}
+.testimonials p {
+    line-height: 1.7;
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* end testimonials   */
 
 
 /* start animation  */
