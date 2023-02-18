@@ -669,8 +669,8 @@ gap: 40px;
     border:  10px #eee solid;
 }
 .testimonials .box:hover img {
-    filter: blur(50);
-    filter: grayscale(80%);
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
 }
 .testimonials .box h3 {
     margin: 0 0 10px;
@@ -682,6 +682,9 @@ gap: 40px;
 }
 .testimonials .rate .yellow {
     color: #ffc107;
+}
+.testimonials .rate .yellow:hover {
+color:#009688
 }
 .testimonials p {
     line-height: 1.7;
