@@ -655,6 +655,9 @@ gap: 40px;
     background-color: #eee;
     cursor: pointer;
 }
+.testimonials .box:hover .yellow {
+    color:#72ada7 
+}
 .testimonials .box img {
     position: absolute;
     height: 100px;
@@ -683,9 +686,6 @@ gap: 40px;
 .testimonials .rate .yellow {
     color: #ffc107;
 }
-.testimonials .rate .yellow:hover {
-color:#009688
-}
 .testimonials p {
     line-height: 1.7;
     color: #777;
@@ -695,6 +695,102 @@ color:#009688
 
 /* end testimonials   */
 
+/* start team members  */
+
+.team {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+}
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.team .box {
+    position: relative;
+}
+.team .box:hover img {
+    filter: grayscale(100%);
+  }
+.team .box::before,
+.team .box::after {
+    content: "";
+    background-color: #f3f3f3;
+    position: absolute;
+    height: 100%;
+    border-radius: 10px;
+    right: 0;
+    top: 0;
+    transition: var(--main-transition);
+}
+.team .box::before {
+
+    z-index: -2;
+    width: calc(100% - 60px);
+}
+.team .box::after {
+    background-color: #e4e4e4;
+    z-index: -1;
+    width: 0;
+}
+.team .box:hover::after {
+    width: calc(100% - 60px);
+}
+.team .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+.team .box .data img {
+    max-width: 100%;
+    width: calc(100% - 60px );
+    border-radius: 10px;
+    transition: var(--main-transition);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.team .box .data .social {   
+    display: flex;    
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: center;
+    width: 60px;
+}
+.team .box .data .social a {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.team .box .data .social i {
+    color: #777;
+    z-index: 2;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.team .box .data .social a:hover i {
+    color: var(--main-color);
+  }
+.team .box .info {
+    padding-left: 80px;
+}
+.team .box .info h3 {
+    font-size: 22px;
+    color: var(--main-color-alt);
+}
+.team .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/* end team members  */
 
 /* start animation  */
 @keyframes upDown {
