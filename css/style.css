@@ -894,6 +894,11 @@ gap: 40px;
     display: flex;
     align-items: center;
 }
+@media (max-width: 991px) {}
+.our-skills img {
+    display: none;
+}
+.our-s
 .our-skills .skills {
     flex: 1;
 }
