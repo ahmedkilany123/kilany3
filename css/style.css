@@ -792,6 +792,141 @@ gap: 40px;
 
 /* end team members  */
 
+/* start services */
+
+.services {
+    position: relative;
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--color-section);
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap:40px
+}
+.services .box {
+    background-color: white;
+    position: relative;
+    counter-increment: services;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    transition: var(--main-transition);
+}
+.services .box:hover {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+.services .box::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    transform: translatex(-50%);
+    left: 50%;
+    background-color: var(
+    --main-color);
+    transition: var(
+    --main-transition);
+}
+.services .box:hover::before {
+    width: 100%;
+
+}
+.services .box i {
+    display: block; /*to recpect text align */
+    text-align: center;
+    margin: 30px auto 20px;
+    color: #d5d5d5;
+}
+.services .box h3 {
+    text-align: center;
+    margin: 20px 0 40px;
+    font-size: 24px;
+    color: var(--main-color);
+}
+.services .box .info {
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: right;
+}
+.services .box .info::before {
+    content: "0" counter(services);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+.services .box .info::after {
+    content: "";
+    position: absolute;
+    background-color: #d5d5d5;
+    width: 40px;
+    height: 100.4%;
+    top: 0;
+    left: 80px;
+    transform: skew(-18deg, 0deg);
+}
+.services .box .info a {
+    color: var(--main-color);
+}
+/* end services */
+
+/* start skills */
+.our-skills {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: white;
+}
+.our-skills .container {
+    display: flex;
+    align-items: center;
+}
+.our-skills .skills {
+    flex: 1;
+}
+.our-skills  .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.our-skills  .skill h3 span {
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: var(--main-color);
+}
+.our-skills  .skill .progress {
+    height: 30px;  
+    background-color: #eee; 
+    position: relative;
+}
+.our-skills  .skill .progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 0.5s linear;
+    -webkit-transition: width 0.5s linear;
+    -moz-transition: width 0.5s linear;
+    -ms-transition: width 0.5s linear;
+    -o-transition: width 0.5s linear;
+}
+/* end skills */
+
 /* start animation  */
 @keyframes upDown {
     0% ,
