@@ -119,11 +119,11 @@ ul {
 }
 .dots-up {
     right: 0;
-    top: 0;
+    top: 100px;
 }
 .dots-down {
     left: 0;
-    bottom: 0;
+    bottom: 100px;
 }
 /* end global rules  */
 
@@ -1053,6 +1053,11 @@ gap: 40px;
 .events img {
     max-width: 450px;
 }
+@media (max-width:991px) {
+    .events img {
+        max-width: 350px;
+    }
+}
 .events .info {
     flex: 1;
 }
@@ -1153,13 +1158,89 @@ gap: 40px;
         -o-border-radius: 0;
     }
     .events .subscribe form input[type="submit"] {
-        padding: 15px 40px;
+        padding: 15px 20px;
     }
 }
 .events .subscribe form input[type="submit"]:hover {
     background-color: var(--main-color);
     cursor: pointer;
 }
+
+/* start pricing  */
+.pricing {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: #eee;
+    position: relative;
+}
+.pricing .container {
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.pricing .box {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    text-align: center;
+    transition: var(--main-transition);
+}
+.pricing .box .title {
+    margin: 30px auto;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+.pricing .box img {
+    max-width: 80px;
+    margin-bottom: 30px;
+}
+.pricing .box .price {
+    margin-bottom: 30px;
+}
+.pricing .box .price .amount {
+    
+font-size: 60px;
+    
+display: block;
+    
+margin: 0 auto 10px;
+    
+font-weight: bold;
+    
+color: var(--main-color);
+}
+.pricing .box .price .time {
+color: #777;
+}
+.pricing .box  ul {
+    text-align: left;
+}
+.pricing .box  ul li {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+.pricing .box  ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.pricing .box a {
+    display: block;
+    padding: 15PX 20PX;
+    border: 2px solid var(--main-color);
+    margin: 30px auto 40px;
+    width: fit-content;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+
+
+/* end pricing  */
 
 /* start animation  */
 @keyframes upDown {
