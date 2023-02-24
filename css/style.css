@@ -1184,6 +1184,53 @@ gap: 40px;
     box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
     text-align: center;
     transition: var(--main-transition);
+    z-index: 1;
+}
+.pricing .popular .lable {
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 10px 35px 10px;
+    writing-mode: vertical-rl;
+    right: 20px;
+    font-size: 18px;
+    top: 0;
+    font-weight: bold;
+}
+.pricing .popular .lable::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-color: transparent transparent white;
+    border-style: solid;
+    border-width: 20px;
+}
+.pricing .box::before,
+.pricing .box::after {
+    content: "";
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 0;
+    height: 50%;
+    z-index: -1;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.pricing .box::before {
+    top: 0;
+    left: 0;
+}
+.pricing .box::after {
+    bottom: 0;
+    right: 0;
+}
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+    width: 100%;
 }
 .pricing .box .title {
     margin: 30px auto;
@@ -1199,19 +1246,14 @@ gap: 40px;
     margin-bottom: 30px;
 }
 .pricing .box .price .amount {
-    
-font-size: 60px;
-    
-display: block;
-    
-margin: 0 auto 10px;
-    
-font-weight: bold;
-    
-color: var(--main-color);
+    font-size: 60px;
+    display: block;
+    margin: 0 auto 10px;
+    font-weight: bold;
+    color: var(--main-color);
 }
 .pricing .box .price .time {
-color: #777;
+    color: #777;
 }
 .pricing .box  ul {
     text-align: left;
@@ -1228,20 +1270,379 @@ color: #777;
     color: var(--main-color);
 }
 .pricing .box a {
-    display: block;
-    padding: 15PX 20PX;
-    border: 2px solid var(--main-color);
-    margin: 30px auto 40px;
-    width: fit-content;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: var(--main-transition);
+    display: block;
+    padding: 15PX 20PX;
+    border: 2px solid var(--main-color);
+    margin: 30px auto 40px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: var(--main-transition);
+    width: fit-content;
 }
-
+.pricing .box a:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
 
 
 /* end pricing  */
 
+
+/* start video  */
+.video {
+    position: relative;
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: white;
+}
+.video .holder {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-section);
+    border: 1px solid #ddd;
+}
+@media (max-width:991px) {
+    .video .holder {
+        flex-direction: column;
+    }
+}
+.video .holder .list {
+    min-width: 300px;
+    background-color: white;
+}
+.video .holder .list .name {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--main-color);
+    font-weight: bold;
+    background-color: var(--color-section);
+}
+.video .holder .list ul li {
+    padding: 20px;
+    border-top: 1px solid var(--color-section);
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.video .holder .list ul li:hover {
+    background-color: #f6f5f5;
+}
+.video .holder .list ul li span {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+}
+.video .preview {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+}
+.video .preview img {
+    max-width: 100%;
+}
+.video .preview .info {
+    background-color: white;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+/* end video  */
+
+/* start state  */
+.state {
+    position: relative;
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-image: url(../img/wallpaperflare-cropped.jpg);
+    background-size: cover;
+    min-height: 300px;
+}
+.state::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeeee3;
+}
+.state h2 {
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    width: fit-content;
+    margin: 0 auto 50px;
+}
+.state .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 20px;
+}
+.state .box {
+    position: relative;
+    text-align: center;
+    background-color: white;
+    padding: 30px 15px;
+    opacity: 0.8;
+    transition: var(--main-transition);
+}
+.state .box::before,
+.state .box::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: var(--main-color);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+.state .box::before {
+    top: 0;
+    right: 0;
+}
+.state .box::after {
+    bottom: 0;
+    left: 0;
+}
+.state .box:hover::before,
+.state .box:hover::after {
+    height: 100%;
+}
+.state .box i {
+    display: block;
+    font-size: 40px;
+}
+.state .box .number {
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+.state .box .text {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* end state  */
+
+/* start discount */
+.discount {
+   display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
+   min-height: 100vh;
+}
+@media (max-width : 991px) {
+    .discount {
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    }
+}
+.discount .image {
+    position: relative;
+    z-index: 1;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-image: url(../img/wallpaperflare-cropped.jpg);
+    background-size: cover;
+    text-align: center;
+    animation: change-img 10s linear infinite;
+    -webkit-animation: change-img 10s linear infinite;
+}
+
+.discount .image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(23 135 224 / 94%);
+    z-index: -1;
+}
+.discount .image h2 {
+    font-size: 40px;
+    letter-spacing: -2px;
+}
+.discount .image p {
+    max-width: 500px;
+    line-height: 1.7;
+    font-size: 18px;
+}
+.discount h2 {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    width: 380px;
+    text-align: center;
+}
+.discount .image img {
+    width: 300px;
+    max-width: 100%;
+}
+
+.discount .form {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discount .form .input {
+    display: block;
+    width: 100%;
+    background-color: #f9f9f9;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+}
+@media (max-width: 991px) {
+    .discount .form .input {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+.discount .form input:focus,
+.discount .form textarea:focus {
+    outline: none;
+}
+.discount .form textarea {
+    border: none;
+    resize: none;
+}
+.discount .form input[type="submit"] {
+    color: white;
+    background-color: var(--main-color-alt);
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 30px;
+}
+.discount .form input[type="submit"]:hover {
+    background-color: var(--main-color)
+}
+/* end discount */
+
+/* start footer  */
+.footer {
+    background-color: black;
+    padding: 70px 0 0;
+}
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap:40px;
+}
+.footer .box h3 {
+    color: white;
+    font-size: 50px;
+    margin: 0 0 20px;
+}
+.footer .box .social {
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+.footer .box .social li {
+    font-size: 25px;
+    background-color: #343232;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+}
+.footer .box .social .facebook:hover {
+    background-color: #2196f3;
+    cursor: pointer;
+}
+.footer .box .social .twitter:hover {
+    background-color:#1787e0 ;
+    cursor: pointer;
+}
+.footer .box .social .youtube:hover {
+    background-color: red;
+    cursor: pointer;
+}
+.footer .box p {
+    color: #b9b9b9;
+}
+.footer .box .links li  {
+    padding: 15px 0;
+    transition: var(--main-transition);
+
+}
+.footer .box .links li a {
+    color: #b9b9b9;
+}
+.footer .box .links li:hover{
+    cursor: pointer;
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+}
+.footer .box .links li:hover a {
+    color: white;
+}
+.footer .box .links li::before {
+    font-family: "font Awesome 5 free";
+    content: "\f101";
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+.footer .box .links li:not(:last-child) {
+    border-bottom: 1px solid #444;
+}
+.footer .box .line {
+
+display: flex;
+
+gap: 20px;
+
+color: #b9b9b9;
+
+padding: 20px;
+}
+.footer .box .line i {
+
+color: var(--main-color-alt);
+
+font-size: 22px;
+}
+.footer .box .line .info,
+.footer .box .line .info a {
+
+color: #b9b9b9;
+}
+.footer .gallary img {
+    width: 78px;
+    border: 3px solid white;
+    margin: 2px;
+}
+.footer p {
+text-align: center;
+color: var(--main-color);
+padding: 10px 0 20px;
+font-size: 24px;
+font-weight: bold;
+}
+
+/* end footer  */
 /* start animation  */
 @keyframes upDown {
     0% ,
@@ -1325,6 +1726,14 @@ color: #777;
         opacity: 0;
         width: 200%;
         height: 200%;
+    }
+}
+@keyframes change-img {
+    0% {
+        background-image: url(../img/wallpaperflare-cropped.jpg);
+    }
+    100% {
+        background-image: url(../img/discount-background1.jpg);
     }
 }
 /* end animation  */
